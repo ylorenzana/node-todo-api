@@ -232,7 +232,7 @@ describe('POST /users', () => {
   it('Should not create user if email is already registered', (done) => {
     request(app)
       .post('/users')
-      .send({email: 'yoyo@gmail.com', password: 'testlul'})
+      .send({email: users[0].email, password: 'testlul'})
       .expect(400)
       .end(done);
   });
